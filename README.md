@@ -29,6 +29,10 @@ https://stackoverflow.com/a/47412779
 
 save() is done in this phase.
 
+How to properly close and open a Hibernate session?\
+https://stackoverflow.com/a/16594319
+
+
 
 
 
