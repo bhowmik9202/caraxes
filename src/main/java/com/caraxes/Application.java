@@ -19,7 +19,7 @@ public class Application {
             System.out.println(movie);
 
             System.out.println("query about to get fired....");
-            movie = (Movie) session.get(Movie.class, Long.valueOf(2));
+            movie = (Movie) session.get(Movie.class, Long.valueOf(1));
             System.out.println(movie);
 
             session.getTransaction().commit();
