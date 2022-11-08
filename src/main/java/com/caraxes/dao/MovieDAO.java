@@ -12,10 +12,7 @@ public class MovieDAO {
         try {
             transaction = session.beginTransaction();
             session.save(movie);
-
-            session.flush();
-            session.clear();
-
+            
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
