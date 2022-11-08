@@ -13,7 +13,7 @@ public class HibernateUtil {
     private static SessionFactory sessionFactory;
 
     public static SessionFactory getSessionFactory() {
-        if (sessionFactory != null) {
+        if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration();
 
@@ -33,8 +33,6 @@ public class HibernateUtil {
                         .applySettings(configuration.getProperties()).build();
 
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
