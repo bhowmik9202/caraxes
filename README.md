@@ -32,6 +32,31 @@ save() is done in this phase.
 How to properly close and open a Hibernate session?\
 https://stackoverflow.com/a/16594319
 
+#### branch : phase-03
+
+first level of explaining hibernate level 1 cache
+
+Spring Boot - Caching Data - Introduction | Part 1 | Simple Programming\
+https://www.youtube.com/watch?v=TiEpi92Whtg&ab_channel=SimpleProgramming
+
+Spring Boot - Caching Data - EhCache | CacheManager | Part 2 | Simple Programming\
+https://www.youtube.com/watch?v=BhhJ11p86zM&ab_channel=SimpleProgramming
+
+````
+query about to get fired....
+16:18:11.243 [main] DEBUG org.hibernate.SQL - select movie0_.id as id1_0_0_, movie0_.imdb_rating as imdb_rat2_0_0_, movie0_.title as title3_0_0_, movie0_.year_of_release as year_of_4_0_0_ from movie movie0_ where movie0_.id=?
+Hibernate: select movie0_.id as id1_0_0_, movie0_.imdb_rating as imdb_rat2_0_0_, movie0_.title as title3_0_0_, movie0_.year_of_release as year_of_4_0_0_ from movie movie0_ where movie0_.id=?
+
+query about to get fired....
+16:18:11.275 [main] DEBUG org.hibernate.SQL - select movie0_.id as id1_0_0_, movie0_.imdb_rating as imdb_rat2_0_0_, movie0_.title as title3_0_0_, movie0_.year_of_release as year_of_4_0_0_ from movie movie0_ where movie0_.id=?
+Hibernate: select movie0_.id as id1_0_0_, movie0_.imdb_rating as imdb_rat2_0_0_, movie0_.title as title3_0_0_, movie0_.year_of_release as year_of_4_0_0_ from movie movie0_ where movie0_.id=?
+````
+
+here, query got fired twice, because two different id used as parameters.\
+but if a single id has been used as parameter, then query would be fired once, because of default first level cache of
+hibernate.
+
+
 
 
 
