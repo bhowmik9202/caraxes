@@ -22,8 +22,8 @@ public class Movie {
     @Column(name = "title", unique = true)
     private String title;
 
-    @Column(name = "rating")
-    private BigDecimal rating;
+    @Column(name = "imdb_rating")
+    private BigDecimal imdbRating;
 
     @Column(
             name = "year_of_release",
