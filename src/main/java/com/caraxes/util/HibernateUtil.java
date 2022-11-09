@@ -26,6 +26,9 @@ public class HibernateUtil {
                 properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
                 properties.put(Environment.SHOW_SQL, "true");
 
+                properties.setProperty("hibernate.cache.use_second_level_cache", "true");
+                properties.setProperty("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
+
                 configuration.setProperties(properties);
                 configuration.addAnnotatedClass(Movie.class);
 
