@@ -8,7 +8,12 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Year;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 @Entity
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 @Table(name = "movie", schema = "caraxes")
 @Data
 @AllArgsConstructor

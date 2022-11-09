@@ -71,6 +71,42 @@ query about to get fired....
 here, query got fired once, because single id has been used as parameter.\
 here, hibernate L1 cache has been used by default.
 
+#### branch : phase-05
+
+Using EhCache in Spring 4 without XML\
+https://stackoverflow.com/questions/21944202/using-ehcache-in-spring-4-without-xml
+
+Hibernate Second-Level Cache\
+https://www.baeldung.com/hibernate-second-level-cache
+
+https://stackoverflow.com/a/36305748
+
+#17 Hibernate Tutorial | Caching Level 2\
+https://www.youtube.com/watch?v=TCHm1h7rBmo&ab_channel=Telusko
+
+hibernate 2nd level cache is implemented here.
+
+````
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>2.10.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>5.6.14.Final</version>
+        </dependency>
+````
+
+````
+                properties.setProperty("hibernate.cache.use_second_level_cache", "true");
+                properties.setProperty("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
+````
+
+
+
+
 
 
 
